@@ -75,7 +75,7 @@ const loginUsuario = async (req, res = response)=> {
         if (!validPassword) {
             return res.status(400).json({
                 ok: false,
-                mag: 'Password incorrecto'
+                msg: 'Password incorrecto'
             })
         }
 
@@ -111,7 +111,9 @@ const revalidarToken = async(req, res = response)=> {
 
     res.json({
         ok: true,
-        token
+        token,
+        uid,
+        name
     })
 }
 
