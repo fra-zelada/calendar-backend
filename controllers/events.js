@@ -40,7 +40,7 @@ const crearEvento = async (req = request, res = response) => {
 
         res.json({
             ok: true,
-            eventoGuardado
+            evento: eventoGuardado
         })
 
     } catch (error) {
@@ -148,7 +148,7 @@ const eliminarEvento = async(req, res = response) => {
 
             return res.status(401).json({
                 ok: false,
-                msg: 'No tiene privilegio de editar este evento'
+                msg: 'No tiene privilegio de eliminar este evento'
             })
 
         }
