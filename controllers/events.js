@@ -4,7 +4,8 @@ const Evento = require('../models/Evento')
 
 const getEventos = async (req, res = response) => {
 
-
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
 
     try {
         const eventos = await Evento.find()
@@ -29,7 +30,8 @@ const crearEvento = async (req = request, res = response) => {
 
     const evento = new Evento(req.body);
 
-
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
 
     try {
 
@@ -57,6 +59,8 @@ const crearEvento = async (req = request, res = response) => {
 
 const actualizarEvento = async (req, res = response) => {
 
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
 
     try {
         //obtengo el id de los parámetros
@@ -117,6 +121,8 @@ const actualizarEvento = async (req, res = response) => {
 
 const eliminarEvento = async(req, res = response) => {
 
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
 
 
     try {

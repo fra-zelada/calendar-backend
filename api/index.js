@@ -1,5 +1,5 @@
 const express = require('express');
-const { dbConnection } = require('./database/config');
+const { dbConnection } = require('../database/config');
 require('dotenv').config(); //importar variables de entorno
 const cors = require('cors')
 
@@ -31,5 +31,5 @@ app.use(express.json());
 // rutas
 //app.use('/login', require('./public/build/static'));
 app.use('/login', express.static('public'));
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/events', require('./routes/events'))
+app.use('/api/auth', require('../routes/auth'))
+app.use('/api/events', require('../routes/events'))
